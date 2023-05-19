@@ -11,10 +11,27 @@ class FormExchange extends StatefulWidget {
 class _FormExchangeState extends State<FormExchange> {
   String valueSelected = 'COMPRA';
 
+  String? currentTextDolar = '';
+  String? currentTextSoles = '';
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   void setNewValueSelected(String newValue) {
     setState(() {
       valueSelected = newValue;
     });
+  }
+
+  void onChangedInputFieldDolar(String value) {
+    print('input value: $value');
+    currentTextDolar = value;
+  }
+
+  void onChangedInputFieldSoles(String value) {
+    print('input value: $value');
+    currentTextSoles = value;
   }
 
   @override
@@ -43,13 +60,21 @@ class _FormExchangeState extends State<FormExchange> {
         ),
         Stack(
           children: [
-            const Column(
+            Column(
               children: [
-                TextFieldCustom(),
-                SizedBox(
+                TextFieldCustom(
+                  title: 'Tu recibes dólares',
+                  initialValueInput: '\$ 500.00',
+                  onChangedInput: onChangedInputFieldDolar,
+                ),
+                const SizedBox(
                   height: 25.00,
                 ),
-                TextFieldCustom(),
+                TextFieldCustom(
+                  title: 'Tu envías soles',
+                  initialValueInput: 'S/ 1,840.50',
+                  onChangedInput: onChangedInputFieldSoles,
+                ),
               ],
             ),
             Positioned(
@@ -71,65 +96,50 @@ class _FormExchangeState extends State<FormExchange> {
             ),
           ],
         ),
-        Column(
+        const Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(
+              padding: EdgeInsets.only(
                 left: 10,
                 right: 10,
                 top: 15,
                 bottom: 50,
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: () => {
-                      print('solo se ejecuta el cupon'),
-                    },
-                    child: const Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Usar cupon',
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        Icon(Icons.confirmation_number_outlined)
-                      ],
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () => {
-                      print('solo se ejecuta el credito'),
-                    },
-                    child: const Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Usar creditos',
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 15,
-                        ),
-                        Icon(Icons.toll_outlined)
-                      ],
-                    ),
-                  )
-                ],
-              ),
+              child: CuponCreditsForm(),
             )
           ],
         ),
         const PrimaryButton(),
+        Container(
+          margin: const EdgeInsets.only(
+            top: 30,
+          ),
+          child: const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.schedule,
+                color: Color(0xFF00297B),
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Text(
+                'Tiempo promedio de atención: ',
+                style: TextStyle(
+                  color: Color(0xFF00297B),
+                ),
+              ),
+              Text(
+                '15 min',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF00297B),
+                ),
+              ),
+            ],
+          ),
+        )
       ],
     );
   }

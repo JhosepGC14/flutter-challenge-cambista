@@ -16,6 +16,7 @@ class _ContainerHomeState extends State<ContainerHome> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(35.00),
+      height: double.infinity,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,

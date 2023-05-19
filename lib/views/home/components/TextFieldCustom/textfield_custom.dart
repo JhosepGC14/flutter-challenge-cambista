@@ -3,7 +3,14 @@ import 'package:flutter/material.dart';
 class TextFieldCustom extends StatefulWidget {
   const TextFieldCustom({
     super.key,
+    required this.title,
+    required this.initialValueInput,
+    required this.onChangedInput,
   });
+  //props
+  final String title;
+  final String initialValueInput;
+  final Function(String) onChangedInput;
 
   @override
   State<TextFieldCustom> createState() => _TextFieldCustomState();
@@ -55,8 +62,9 @@ class _TextFieldCustomState extends State<TextFieldCustom> {
           borderRadius: BorderRadius.circular(8),
         ),
         child: TextFormField(
-          initialValue: '\$ 500.00',
+          initialValue: widget.initialValueInput,
           keyboardType: TextInputType.number,
+          onChanged: widget.onChangedInput,
           style: TextStyle(
             fontSize: 22.00,
             fontWeight: FontWeight.bold,
@@ -64,7 +72,7 @@ class _TextFieldCustomState extends State<TextFieldCustom> {
           ),
           decoration: InputDecoration(
             border: InputBorder.none,
-            labelText: 'Tu envías soles',
+            labelText: widget.title,
             labelStyle: TextStyle(
               color: _isFocused ? const Color(0xff1D63FF) : Colors.grey,
               fontSize: 19.00,

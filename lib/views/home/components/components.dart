@@ -3,3 +3,4 @@ export 'package:flutter_components/views/home/components/TextFieldCustom/textfie
 export 'package:flutter_components/views/home/components/ButtonSwitch/button_switch.dart';
 export 'package:flutter_components/views/home/components/FormExChange/form_exchange.dart';
 export 'package:flutter_components/views/home/components/AppBarCustom/appbar_custom.dart';
+export 'package:flutter_components/views/home/components/CuponCreditsForm/cupon_credits_form.dart';
