@@ -10,42 +10,72 @@ class TextFieldCustom extends StatefulWidget {
 }
 
 class _TextFieldCustomState extends State<TextFieldCustom> {
+  late FocusNode _focusNode;
+  bool _isFocused = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _focusNode = FocusNode();
+    _focusNode.addListener(_handleFocusChange);
+  }
+
+  @override
+  void dispose() {
+    _focusNode.removeListener(_handleFocusChange);
+    _focusNode.dispose();
+    super.dispose();
+  }
+
+  void _handleFocusChange() {
+    setState(() {
+      _isFocused = _focusNode.hasFocus;
+    });
+  }
+
+  _TextFieldCustomState() {
+    _focusNode = FocusNode();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      initialValue: '500.00',
-      keyboardType: TextInputType.number,
-      style: const TextStyle(
-        fontSize: 22.00,
-        fontWeight: FontWeight.bold,
-      ),
-      decoration: InputDecoration(
-        focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(
-            style: BorderStyle.solid,
-            color: Color(0xff1D63FF),
-            width: 2.0,
+    return Focus(
+      focusNode: _focusNode,
+      child: Container(
+        padding: const EdgeInsets.only(
+          top: 0,
+          bottom: 0,
+          left: 15,
+          right: 8,
+        ),
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: _isFocused ? const Color(0xff1D63FF) : Colors.grey,
           ),
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+          borderRadius: BorderRadius.circular(8),
         ),
-        border: const OutlineInputBorder(
-          borderSide: BorderSide(
-            style: BorderStyle.solid,
-            color: Color(0xff1D63FF),
+        child: TextFormField(
+          initialValue: '\$ 500.00',
+          keyboardType: TextInputType.number,
+          style: TextStyle(
+            fontSize: 22.00,
+            fontWeight: FontWeight.bold,
+            color: _isFocused ? const Color(0xff1D63FF) : Colors.black,
           ),
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-        ),
-        labelText: 'Tu envías soles',
-        labelStyle: const TextStyle(
-          color: Color(0xff1D63FF),
-          fontSize: 18.00,
-        ),
-        prefixIcon: const Icon(Icons.currency_bitcoin),
-        prefixIconColor: const Color(0xff1D63FF),
-        suffixIcon: Image.network(
-          'https://tucambista.pe/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fusa_flag.64d3aff1.png&w=32&q=75',
-          width: 15.00,
-          height: 10,
+          decoration: InputDecoration(
+            border: InputBorder.none,
+            labelText: 'Tu envías soles',
+            labelStyle: TextStyle(
+              color: _isFocused ? const Color(0xff1D63FF) : Colors.grey,
+              fontSize: 19.00,
+              fontWeight: FontWeight.bold,
+            ),
+            suffixIcon: Image.network(
+              'https://tucambista.pe/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fusa_flag.64d3aff1.png&w=32&q=75',
+              width: 15.00,
+              height: 10,
+            ),
+          ),
         ),
       ),
     );

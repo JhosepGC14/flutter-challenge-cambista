@@ -54,7 +54,7 @@ class _FormExchangeState extends State<FormExchange> {
             ),
             Positioned(
               right: 20,
-              bottom: 60,
+              bottom: 65,
               child: IconButton(
                 padding: const EdgeInsets.all(10.0),
                 iconSize: 30,
