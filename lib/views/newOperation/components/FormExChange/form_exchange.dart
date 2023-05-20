@@ -120,6 +120,7 @@ class _FormExchangeState extends State<FormExchange> {
               Icon(
                 Icons.schedule,
                 color: Color(0xFF00297B),
+                size: 17.0,
               ),
               SizedBox(
                 width: 5,

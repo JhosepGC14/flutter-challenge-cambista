@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'views/home/home.dart';
+import 'package:flutter_components/views/views.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Cambia ahora'),
+      home: const ViewPages(),
     );
   }
 }

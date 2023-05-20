@@ -32,7 +32,7 @@ class _PrimaryButtonState extends State<PrimaryButton> {
         ),
         shape: MaterialStatePropertyAll<OutlinedBorder>(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(8),
           ),
         ),
         overlayColor: MaterialStateProperty.resolveWith<Color>(

@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AppBarCustomWidget extends StatefulWidget implements PreferredSizeWidget {
-  const AppBarCustomWidget({super.key});
+  const AppBarCustomWidget({super.key, required this.openDrawerNavigation});
+
+  final Function() openDrawerNavigation;
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight + 1);
@@ -34,7 +36,7 @@ class _AppBarCustomWidgetState extends State<AppBarCustomWidget> {
       actions: <Widget>[
         IconButton(
           icon: const Icon(Icons.segment),
-          onPressed: () => print('hi on icon action'),
+          onPressed: widget.openDrawerNavigation,
         ),
       ],
       elevation: 0,
@@ -43,7 +45,7 @@ class _AppBarCustomWidgetState extends State<AppBarCustomWidget> {
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(1.0),
         child: Container(
-          color: Colors.grey,
+          color: Colors.grey[350],
           height: 1.0,
         ),
       ),
