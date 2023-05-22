@@ -13,7 +13,7 @@ class BottomNavigatorBarCustom extends StatefulWidget {
 }
 
 class _BottomNavigatorBarCustomState extends State<BottomNavigatorBarCustom> {
-  List<BottomNavigationBarItem> items_views = const [
+  List<BottomNavigationBarItem> itemsViews = const [
     BottomNavigationBarItem(
       icon: Icon(Icons.swap_horiz_outlined),
       label: 'Operaciones',
@@ -77,7 +77,7 @@ class _BottomNavigatorBarCustomState extends State<BottomNavigatorBarCustom> {
         selectedLabelStyle: const TextStyle(
           color: Color(0xff1D63FF),
         ),
-        items: items_views,
+        items: itemsViews,
       ),
     );
   }

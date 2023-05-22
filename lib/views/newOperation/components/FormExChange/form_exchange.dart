@@ -109,7 +109,7 @@ class _FormExchangeState extends State<FormExchange> {
             )
           ],
         ),
-        const PrimaryButton(),
+        const PrimaryButton(title: 'Iniciar operación'),
         Container(
           margin: const EdgeInsets.only(
             top: 30,

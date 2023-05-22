@@ -40,27 +40,23 @@ class _ViewPagesState extends State<ViewPages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
       appBar: AppBarCustomWidget(
         openDrawerNavigation: openDrawer,
       ),
-      body: listPages[currentIndexPage],
-      bottomNavigationBar: BottomNavigatorBarCustom(
-        currentIndexPage: currentIndexPage,
-        onChangePage: onChangePage,
-      ),
-      endDrawer: SafeArea(
-        child: Drawer(
-          elevation: 0, // Optional: to remove the shadow of the Drawer
+      // body: ,
+      body: Scaffold(
+        key: scaffoldKey,
+        bottomNavigationBar: BottomNavigatorBarCustom(
+          currentIndexPage: currentIndexPage,
+          onChangePage: onChangePage,
+        ),
+        endDrawer: Drawer(
+          elevation: 0,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(0), // Set borderRadius to 0
+            borderRadius: BorderRadius.circular(0),
           ),
-          child: const NavigationDrawer(
-            elevation: 0,
+          child: const Column(
             children: [
-              Padding(
-                padding: EdgeInsets.only(top: 50),
-              ),
               Text('opcion 1'),
               SizedBox(
                 height: 20,
@@ -72,14 +68,11 @@ class _ViewPagesState extends State<ViewPages> {
               Text('opcion 1'),
               SizedBox(
                 height: 20,
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(28, 16, 28, 10),
-                child: Divider(),
               ),
             ],
           ),
         ),
+        body: listPages[currentIndexPage],
       ),
     );
   }

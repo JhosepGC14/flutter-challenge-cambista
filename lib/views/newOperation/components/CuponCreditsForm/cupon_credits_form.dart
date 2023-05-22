@@ -18,6 +18,7 @@ class CuponCreditsForm extends StatelessWidget {
             print('solo se ejecuta el cupon'),
             showDialog(
               context: context,
+              barrierDismissible: false,
               builder: (BuildContext context) {
                 return const DialogCuponCustom();
               },
