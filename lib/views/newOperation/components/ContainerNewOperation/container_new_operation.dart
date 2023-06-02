@@ -12,24 +12,32 @@ class ContainerNewOperation extends StatefulWidget {
 class _ContainerNewOperationState extends State<ContainerNewOperation> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(35.00),
+    return SizedBox(
+      width: double.infinity,
       height: double.infinity,
-      child: const Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
+        scrollDirection: Axis.vertical,
         children: [
-          Text(
-            'Cambia ahora',
-            style: TextStyle(
-              fontSize: 17.00,
-              fontWeight: FontWeight.bold,
+          Container(
+            padding: const EdgeInsets.all(35.00),
+            child: const Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Cambia ahora',
+                  style: TextStyle(
+                    fontSize: 17.00,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: 30.00,
+                ),
+                FormExchange(),
+              ],
             ),
           ),
-          SizedBox(
-            height: 30.00,
-          ),
-          FormExchange(),
         ],
       ),
     );

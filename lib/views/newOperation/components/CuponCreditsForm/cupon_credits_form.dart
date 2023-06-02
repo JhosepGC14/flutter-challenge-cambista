@@ -33,6 +33,7 @@ class CuponCreditsForm extends StatelessWidget {
                   'Usar cupon',
                   style: TextStyle(
                     color: Color(0xFF00297B),
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
@@ -55,6 +56,7 @@ class CuponCreditsForm extends StatelessWidget {
                 'Usar creditos',
                 style: TextStyle(
                   color: Color(0xFF00297B),
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               SizedBox(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_components/utils/constants.dart';
 import '../components.dart';
 
 class FormExchange extends StatefulWidget {
@@ -74,6 +75,8 @@ class _FormExchangeState extends State<FormExchange> {
                   title: 'Tu envías soles',
                   initialValueInput: 'S/ 1,840.50',
                   onChangedInput: onChangedInputFieldSoles,
+                  suffixText: 'PEN',
+                  suffixIcon: logoPeru,
                 ),
               ],
             ),

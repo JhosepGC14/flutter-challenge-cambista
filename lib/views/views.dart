@@ -4,8 +4,7 @@ import 'package:flutter_components/views/benefits/benefits.dart';
 import 'package:flutter_components/views/help/help.dart';
 import 'package:flutter_components/views/newOperation/new_operation.dart';
 import 'package:flutter_components/views/operations/operations.dart';
-import '../components/AppBarCustom/appbar_custom.dart';
-import '../components/BottomNavigatorBarCustom/bottom_navigator_bar_custom.dart';
+import '../components/components.dart';
 
 class ViewPages extends StatefulWidget {
   const ViewPages({super.key});
@@ -33,46 +32,29 @@ class _ViewPagesState extends State<ViewPages> {
     });
   }
 
-  void openDrawer() {
-    scaffoldKey.currentState?.openEndDrawer();
+  void onToggleEndDrawer() {
+    if (scaffoldKey.currentState?.isEndDrawerOpen == true &&
+        scaffoldKey.currentState?.hasEndDrawer == true) {
+      scaffoldKey.currentState?.closeEndDrawer();
+    } else {
+      scaffoldKey.currentState?.openEndDrawer();
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarCustomWidget(
-        openDrawerNavigation: openDrawer,
+        openDrawerNavigation: onToggleEndDrawer,
       ),
-      // body: ,
       body: Scaffold(
         key: scaffoldKey,
+        body: listPages[currentIndexPage],
+        endDrawer: const DrawerCustom(),
         bottomNavigationBar: BottomNavigatorBarCustom(
           currentIndexPage: currentIndexPage,
           onChangePage: onChangePage,
         ),
-        endDrawer: Drawer(
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(0),
-          ),
-          child: const Column(
-            children: [
-              Text('opcion 1'),
-              SizedBox(
-                height: 20,
-              ),
-              Text('opcion 1'),
-              SizedBox(
-                height: 20,
-              ),
-              Text('opcion 1'),
-              SizedBox(
-                height: 20,
-              ),
-            ],
-          ),
-        ),
-        body: listPages[currentIndexPage],
       ),
     );
   }

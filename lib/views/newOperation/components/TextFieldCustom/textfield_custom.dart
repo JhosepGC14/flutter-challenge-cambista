@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_components/utils/constants.dart';
 
 class TextFieldCustom extends StatefulWidget {
   const TextFieldCustom({
@@ -6,10 +7,14 @@ class TextFieldCustom extends StatefulWidget {
     required this.title,
     required this.initialValueInput,
     required this.onChangedInput,
+    this.suffixText = 'USD',
+    this.suffixIcon = logoUSA,
   });
   //props
   final String title;
   final String initialValueInput;
+  final String suffixText;
+  final String suffixIcon;
   final Function(String) onChangedInput;
 
   @override
@@ -71,19 +76,35 @@ class _TextFieldCustomState extends State<TextFieldCustom> {
             color: _isFocused ? const Color(0xff1D63FF) : Colors.black,
           ),
           decoration: InputDecoration(
-            border: InputBorder.none,
-            labelText: widget.title,
-            labelStyle: TextStyle(
-              color: _isFocused ? const Color(0xff1D63FF) : Colors.grey,
-              fontSize: 19.00,
-              fontWeight: FontWeight.bold,
-            ),
-            suffixIcon: Image.network(
-              'https://tucambista.pe/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fusa_flag.64d3aff1.png&w=32&q=75',
-              width: 15.00,
-              height: 10,
-            ),
-          ),
+              border: InputBorder.none,
+              labelText: widget.title,
+              labelStyle: TextStyle(
+                color: _isFocused ? const Color(0xff1D63FF) : Colors.grey,
+                fontSize: 19.00,
+                fontWeight: FontWeight.bold,
+              ),
+              suffixIcon: SizedBox(
+                width: 60,
+                height: 50,
+                child: Row(
+                  children: [
+                    Text(
+                      widget.suffixText,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 7,
+                    ),
+                    Image.network(
+                      widget.suffixIcon,
+                      width: 20.00,
+                      height: 20,
+                    ),
+                  ],
+                ),
+              )),
         ),
       ),
     );
