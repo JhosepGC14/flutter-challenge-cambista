@@ -13,52 +13,16 @@ class BottomNavigatorBarCustom extends StatefulWidget {
 }
 
 class _BottomNavigatorBarCustomState extends State<BottomNavigatorBarCustom> {
-  List<BottomNavigationBarItem> itemsViews = const [
-    BottomNavigationBarItem(
-      icon: Icon(Icons.swap_horiz_outlined),
-      label: 'Operaciones',
-      activeIcon: Icon(
-        Icons.swap_horiz_outlined,
-        color: Color(0xff1D63FF),
-      ),
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.credit_card_outlined),
-      label: 'Cuentas',
-      activeIcon: Icon(
-        Icons.credit_card_outlined,
-        color: Color(0xff1D63FF),
-      ),
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.add_circle_outline),
-      label: 'Nueva operación',
-      activeIcon: Icon(
-        Icons.add_circle_outline,
-        color: Color(0xff1D63FF),
-      ),
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.wine_bar_outlined),
-      label: 'Beneficios',
-      activeIcon: Icon(
-        Icons.wine_bar_outlined,
-        color: Color(0xff1D63FF),
-      ),
-    ),
-    BottomNavigationBarItem(
-      icon: Icon(Icons.help_outline),
-      label: 'Ayuda',
-      activeIcon: Icon(
-        Icons.help_outline,
-        color: Color(0xff1D63FF),
-      ),
-    ),
-  ];
+  void onTapChangePage(int index) {
+    widget.onChangePage(index);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
+      height: 90,
+      padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
       decoration: BoxDecoration(
         border: Border(
           top: BorderSide(
@@ -67,17 +31,146 @@ class _BottomNavigatorBarCustomState extends State<BottomNavigatorBarCustom> {
           ),
         ),
       ),
-      child: BottomNavigationBar(
-        currentIndex: widget.currentIndexPage,
-        onTap: widget.onChangePage,
-        type: BottomNavigationBarType.fixed,
-        elevation: 0,
-        unselectedFontSize: 11.0,
-        selectedFontSize: 11.0,
-        selectedLabelStyle: const TextStyle(
-          color: Color(0xff1D63FF),
-        ),
-        items: itemsViews,
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          GestureDetector(
+            onTap: () {
+              onTapChangePage(0);
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.swap_horiz_outlined,
+                  color: widget.currentIndexPage == 0
+                      ? const Color(0xff1D63FF)
+                      : Colors.grey,
+                ),
+                Text(
+                  'Operaciones',
+                  style: TextStyle(
+                    color: widget.currentIndexPage == 0
+                        ? const Color(0xff1D63FF)
+                        : Colors.grey,
+                    fontSize: 11,
+                  ),
+                  textAlign: TextAlign.center,
+                )
+              ],
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              onTapChangePage(1);
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.credit_card_outlined,
+                  color: widget.currentIndexPage == 1
+                      ? const Color(0xff1D63FF)
+                      : Colors.grey,
+                ),
+                Text(
+                  'Cuentas',
+                  style: TextStyle(
+                    color: widget.currentIndexPage == 1
+                        ? const Color(0xff1D63FF)
+                        : Colors.grey,
+                    fontSize: 11,
+                  ),
+                  textAlign: TextAlign.center,
+                )
+              ],
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              onTapChangePage(2);
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.add_circle_outline,
+                  color: widget.currentIndexPage == 2
+                      ? const Color(0xff1D63FF)
+                      : Colors.grey,
+                ),
+                Text(
+                  'Nueva\noperación',
+                  style: TextStyle(
+                    color: widget.currentIndexPage == 2
+                        ? const Color(0xff1D63FF)
+                        : Colors.grey,
+                    fontSize: 11,
+                  ),
+                  textAlign: TextAlign.center,
+                )
+              ],
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              onTapChangePage(3);
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.wine_bar_outlined,
+                  color: widget.currentIndexPage == 3
+                      ? const Color(0xff1D63FF)
+                      : Colors.grey,
+                ),
+                Text(
+                  'Beneficios',
+                  style: TextStyle(
+                    color: widget.currentIndexPage == 3
+                        ? const Color(0xff1D63FF)
+                        : Colors.grey,
+                    fontSize: 11,
+                  ),
+                  textAlign: TextAlign.center,
+                )
+              ],
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              onTapChangePage(4);
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.help_outline,
+                  color: widget.currentIndexPage == 4
+                      ? const Color(0xff1D63FF)
+                      : Colors.grey,
+                ),
+                Text(
+                  'Ayuda',
+                  style: TextStyle(
+                    color: widget.currentIndexPage == 4
+                        ? const Color(0xff1D63FF)
+                        : Colors.grey,
+                    fontSize: 11,
+                  ),
+                  textAlign: TextAlign.center,
+                )
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

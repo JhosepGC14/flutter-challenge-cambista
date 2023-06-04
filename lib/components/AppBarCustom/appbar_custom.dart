@@ -16,37 +16,43 @@ class AppBarCustomWidget extends StatefulWidget implements PreferredSizeWidget {
 class _AppBarCustomWidgetState extends State<AppBarCustomWidget> {
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      leading: Builder(
-        builder: (BuildContext context) {
-          return IconButton(
-            icon: const Icon(Icons.notifications_outlined),
-            onPressed: () => print('hi on menu icon'),
-          );
-        },
-      ),
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SvgPicture.asset(
-            'assets/icons/cambista.svg',
+
+    return Container(
+      color: Colors.grey[100],
+      width: double.maxFinite,
+      child: Container(
+        height: kToolbarHeight + 75,
+        margin: const EdgeInsets.only(top: kTextTabBarHeight + 10),
+        padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border(
+            bottom: BorderSide(color: Colors.grey[350]!),
           ),
-        ],
-      ),
-      actions: <Widget>[
-        IconButton(
-          icon: const Icon(Icons.segment),
-          onPressed: widget.openDrawerNavigation,
         ),
-      ],
-      elevation: 0,
-      backgroundColor: Colors.white,
-      toolbarHeight: kToolbarHeight + 1,
-      bottom: PreferredSize(
-        preferredSize: const Size.fromHeight(1.0),
-        child: Container(
-          color: Colors.grey[350],
-          height: 1.0,
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            IconButton(
+              icon: const Icon(Icons.notifications_outlined),
+              onPressed: () => {},
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  'assets/icons/cambista.svg',
+                  height: 30,
+                ),
+              ],
+            ),
+            IconButton(
+              icon: const Icon(Icons.segment),
+              onPressed: widget.openDrawerNavigation,
+            ),
+          ],
         ),
       ),
     );

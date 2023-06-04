@@ -5,6 +5,7 @@ import 'package:flutter_components/views/help/help.dart';
 import 'package:flutter_components/views/newOperation/new_operation.dart';
 import 'package:flutter_components/views/operations/operations.dart';
 import '../components/components.dart';
+import 'package:flutter/services.dart';
 
 class ViewPages extends StatefulWidget {
   const ViewPages({super.key});
@@ -43,6 +44,11 @@ class _ViewPagesState extends State<ViewPages> {
 
   @override
   Widget build(BuildContext context) {
+    // Cambiar el color del texto en la barra de estado a negro
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
+      statusBarColor: Colors.transparent,
+    ));
+
     return Scaffold(
       appBar: AppBarCustomWidget(
         openDrawerNavigation: onToggleEndDrawer,

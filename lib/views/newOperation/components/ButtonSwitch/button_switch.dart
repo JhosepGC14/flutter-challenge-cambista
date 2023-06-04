@@ -48,6 +48,7 @@ class _ButtonSwitchState extends State<ButtonSwitch> {
           widget.title,
           style: TextStyle(
             color: widget.selected ? Colors.white : Colors.black,
+            fontWeight: widget.selected ? FontWeight.bold : FontWeight.normal,
           ),
         ),
         selectedColor: const Color(0xff1D63FF),

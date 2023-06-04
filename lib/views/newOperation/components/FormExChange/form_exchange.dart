@@ -26,12 +26,10 @@ class _FormExchangeState extends State<FormExchange> {
   }
 
   void onChangedInputFieldDolar(String value) {
-    print('input value: $value');
     currentTextDolar = value;
   }
 
   void onChangedInputFieldSoles(String value) {
-    print('input value: $value');
     currentTextSoles = value;
   }
 

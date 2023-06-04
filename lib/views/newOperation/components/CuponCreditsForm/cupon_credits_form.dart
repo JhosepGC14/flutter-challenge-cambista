@@ -15,7 +15,6 @@ class CuponCreditsForm extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () => {
-            print('solo se ejecuta el cupon'),
             showDialog(
               context: context,
               barrierDismissible: false,
@@ -46,9 +45,7 @@ class CuponCreditsForm extends StatelessWidget {
           ),
         ),
         GestureDetector(
-          onTap: () => {
-            print('solo se ejecuta el credito'),
-          },
+          onTap: () => {},
           child: const Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
