@@ -6,3 +6,4 @@ export 'package:flutter_components/views/newOperation/components/CuponCreditsFor
 export 'package:flutter_components/views/newOperation/components/ContainerNewOperation/container_new_operation.dart';
 export 'package:flutter_components/views/newOperation/components/DialogCuponCustom/dialog_cupon_custom.dart';
 export 'package:flutter_components/views/newOperation/components/TextFieldCupon/textfield_cupon.dart';
+export 'package:flutter_components/views/newOperation/components/StepperNewOperation/stepper_new_operation.dart';

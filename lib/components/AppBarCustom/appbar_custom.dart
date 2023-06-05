@@ -16,14 +16,13 @@ class AppBarCustomWidget extends StatefulWidget implements PreferredSizeWidget {
 class _AppBarCustomWidgetState extends State<AppBarCustomWidget> {
   @override
   Widget build(BuildContext context) {
-
     return Container(
       color: Colors.grey[100],
       width: double.maxFinite,
       child: Container(
         height: kToolbarHeight + 75,
         margin: const EdgeInsets.only(top: kTextTabBarHeight + 10),
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border(
@@ -36,7 +35,10 @@ class _AppBarCustomWidgetState extends State<AppBarCustomWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             IconButton(
-              icon: const Icon(Icons.notifications_outlined),
+              icon: const Icon(
+                Icons.notifications_outlined,
+                size: 30,
+              ),
               onPressed: () => {},
             ),
             Row(
@@ -49,7 +51,7 @@ class _AppBarCustomWidgetState extends State<AppBarCustomWidget> {
               ],
             ),
             IconButton(
-              icon: const Icon(Icons.segment),
+              icon: const Icon(Icons.segment, size: 30),
               onPressed: widget.openDrawerNavigation,
             ),
           ],

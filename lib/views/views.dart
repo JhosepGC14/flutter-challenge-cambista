@@ -44,7 +44,6 @@ class _ViewPagesState extends State<ViewPages> {
 
   @override
   Widget build(BuildContext context) {
-    // Cambiar el color del texto en la barra de estado a negro
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
       statusBarColor: Colors.transparent,
     ));

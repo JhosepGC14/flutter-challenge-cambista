@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../components.dart';
 
 class ContainerNewOperation extends StatefulWidget {
@@ -19,11 +18,15 @@ class _ContainerNewOperationState extends State<ContainerNewOperation> {
         scrollDirection: Axis.vertical,
         children: [
           Container(
-            padding: const EdgeInsets.all(35.00),
+            padding: const EdgeInsets.all(30.00),
             child: const Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                StepperNewOperation(),
+                SizedBox(
+                  height: 20.00,
+                ),
                 Text(
                   'Cambia ahora',
                   style: TextStyle(
@@ -32,7 +35,7 @@ class _ContainerNewOperationState extends State<ContainerNewOperation> {
                   ),
                 ),
                 SizedBox(
-                  height: 30.00,
+                  height: 20.00,
                 ),
                 FormExchange(),
               ],
