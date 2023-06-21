@@ -7,7 +7,7 @@ class AppBarCustomWidget extends StatefulWidget implements PreferredSizeWidget {
   final Function() openDrawerNavigation;
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 1);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 75);
 
   @override
   State<AppBarCustomWidget> createState() => _AppBarCustomWidgetState();
@@ -20,7 +20,6 @@ class _AppBarCustomWidgetState extends State<AppBarCustomWidget> {
       color: Colors.grey[100],
       width: double.maxFinite,
       child: Container(
-        height: kToolbarHeight + 75,
         margin: const EdgeInsets.only(top: kTextTabBarHeight + 10),
         padding: const EdgeInsets.all(5),
         decoration: BoxDecoration(

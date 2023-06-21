@@ -13,7 +13,6 @@ class _StepperNewOperationState extends State<StepperNewOperation> {
   int currentStepValue = 0;
 
   void onChangeNextStep() {
-    print('se ejecuta esta vain');
     setState(() {
       currentStepValue = currentStepValue + 1;
     });
@@ -85,7 +84,6 @@ class _StepItemNewOperationState extends State<StepItemNewOperation> {
 
   @override
   Widget build(BuildContext context) {
-    print('widget.currentStep : ${widget.currentStep}');
     return Flexible(
       flex: 2,
       child: GestureDetector(
