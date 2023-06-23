@@ -44,7 +44,7 @@ class _AccountsViewState extends State<AccountsView> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              InkWell(
+              GestureDetector(
                 child: Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 12,
@@ -79,7 +79,7 @@ class _AccountsViewState extends State<AccountsView> {
               const SizedBox(
                 width: 15,
               ),
-              InkWell(
+              GestureDetector(
                 child: Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 12,

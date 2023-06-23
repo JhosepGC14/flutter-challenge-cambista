@@ -46,20 +46,20 @@ class CardAccountProduct extends StatelessWidget {
                   ),
                 ],
               ),
-              const Row(
+              Row(
                 children: [
-                  InkWell(
-                    child: Icon(
+                  GestureDetector(
+                    child: const Icon(
                       Icons.edit_outlined,
                       color: Colors.grey,
                       size: 23,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  InkWell(
-                    child: Icon(
+                  GestureDetector(
+                    child: const Icon(
                       Icons.delete_outline_outlined,
                       color: Colors.grey,
                       size: 23,
