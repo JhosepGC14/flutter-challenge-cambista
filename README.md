@@ -1,6 +1,6 @@
 # Flutter Challenge TuCambista
 
-A new Flutter project.
+This is a challenge layout of TuCambista App.
 
 ## Getting Started
 
