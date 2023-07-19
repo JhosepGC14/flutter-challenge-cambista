@@ -98,7 +98,7 @@ class _StepItemNewOperationState extends State<StepItemNewOperation> {
             Text(
               getTitleOfStepper(widget.valueStep),
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 14,
                 fontWeight: FontWeight.bold,
                 color: widget.valueStep <= widget.currentStep
                     ? Colors.black

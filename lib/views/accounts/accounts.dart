@@ -11,6 +11,14 @@ class AccountsView extends StatefulWidget {
 class _AccountsViewState extends State<AccountsView> {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    double fontSize = 14.0;
+    if (screenWidth < 540 || screenHeight < 600) {
+      fontSize = 11.0;
+    }
+
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: 30,
@@ -44,73 +52,81 @@ class _AccountsViewState extends State<AccountsView> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              GestureDetector(
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 9,
-                  ),
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.black,
-                      width: 1.0,
+              Expanded(
+                flex: 1,
+                child: GestureDetector(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 9,
                     ),
-                    borderRadius: const BorderRadius.all(
-                      Radius.circular(8.0),
-                    ),
-                  ),
-                  child: const Row(
-                    children: [
-                      Icon(Icons.add_circle_outline, size: 19),
-                      SizedBox(
-                        width: 5,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.black,
+                        width: 1.0,
                       ),
-                      Text(
-                        'Cuenta bancaria',
-                        style: TextStyle(
-                          fontSize: 14.00,
-                          fontWeight: FontWeight.bold,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(8.0),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(Icons.add_circle_outline, size: 19),
+                        const SizedBox(
+                          width: 5,
                         ),
-                      ),
-                    ],
+                        Text(
+                          'Cuenta bancaria',
+                          style: TextStyle(
+                            fontSize: fontSize,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
               const SizedBox(
                 width: 15,
               ),
-              GestureDetector(
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 9,
-                  ),
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.black,
-                      width: 1.0,
+              Expanded(
+                flex: 1,
+                child: GestureDetector(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 9,
                     ),
-                    borderRadius: const BorderRadius.all(
-                      Radius.circular(8.0),
-                    ),
-                  ),
-                  child: const Row(
-                    children: [
-                      Icon(Icons.add_circle_outline, size: 19),
-                      SizedBox(
-                        width: 5,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.black,
+                        width: 1.0,
                       ),
-                      Text(
-                        'Tarjeta de crédito',
-                        style: TextStyle(
-                          fontSize: 14.00,
-                          fontWeight: FontWeight.bold,
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(8.0),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(Icons.add_circle_outline, size: 19),
+                        const SizedBox(
+                          width: 5,
                         ),
-                      ),
-                    ],
+                        Text(
+                          'Tarjeta de crédito',
+                          style: TextStyle(
+                            fontSize: fontSize,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
+              )
             ],
           ),
           const SizedBox(

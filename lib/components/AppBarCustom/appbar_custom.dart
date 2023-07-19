@@ -20,8 +20,8 @@ class _AppBarCustomWidgetState extends State<AppBarCustomWidget> {
       color: Colors.grey[100],
       width: double.maxFinite,
       child: Container(
-        margin: const EdgeInsets.only(top: kTextTabBarHeight + 10),
-        padding: const EdgeInsets.all(5),
+        margin: const EdgeInsets.only(top: kTextTabBarHeight + 5),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border(
@@ -36,7 +36,7 @@ class _AppBarCustomWidgetState extends State<AppBarCustomWidget> {
             IconButton(
               icon: const Icon(
                 Icons.notifications_outlined,
-                size: 30,
+                size: 27,
               ),
               onPressed: () => {},
             ),
@@ -45,12 +45,12 @@ class _AppBarCustomWidgetState extends State<AppBarCustomWidget> {
               children: [
                 SvgPicture.asset(
                   'assets/icons/cambista.svg',
-                  height: 30,
+                  height: 25,
                 ),
               ],
             ),
             IconButton(
-              icon: const Icon(Icons.segment, size: 30),
+              icon: const Icon(Icons.segment, size: 27),
               onPressed: widget.openDrawerNavigation,
             ),
           ],
