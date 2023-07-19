@@ -86,8 +86,10 @@ class _BenefitsViewState extends State<BenefitsView> {
                     RichText(
                       text: TextSpan(
                         text: 'Comparte ',
-                        style:
-                            const TextStyle(color: Colors.black, height: 1.5),
+                        style: const TextStyle(
+                          color: Colors.black,
+                          height: 1.5,
+                        ),
                         children: <InlineSpan>[
                           const TextSpan(
                             text: 'tu código ',
