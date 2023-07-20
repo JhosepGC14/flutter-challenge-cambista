@@ -77,8 +77,8 @@ class _PrimaryButtonState extends State<PrimaryButton> {
               EdgeInsets.only(
                 top: 3,
                 bottom: 3,
-                left: 50,
-                right: 50,
+                left: 25,
+                right: 25,
               ),
             ),
             foregroundColor: const MaterialStatePropertyAll<Color>(
@@ -155,96 +155,5 @@ class _PrimaryButtonState extends State<PrimaryButton> {
           ),
         );
     }
-
-    // return widget.size == 'm'
-    //     ? ElevatedButton(
-    //         onPressed: () {},
-    //         style: ButtonStyle(
-    //           minimumSize: const MaterialStatePropertyAll<Size>(
-    //             Size(double.infinity, 40),
-    //           ),
-    //           elevation: const MaterialStatePropertyAll<double>(0.00),
-    //           backgroundColor: const MaterialStatePropertyAll<Color>(
-    //             Color(0xFFFEC700),
-    //           ),
-    //           padding: const MaterialStatePropertyAll<EdgeInsets>(
-    //             EdgeInsets.only(
-    //               top: 3,
-    //               bottom: 3,
-    //               left: 50,
-    //               right: 50,
-    //             ),
-    //           ),
-    //           foregroundColor: const MaterialStatePropertyAll<Color>(
-    //             Colors.white,
-    //           ),
-    //           shape: MaterialStatePropertyAll<OutlinedBorder>(
-    //             RoundedRectangleBorder(
-    //               borderRadius: BorderRadius.circular(8),
-    //             ),
-    //           ),
-    //           overlayColor: MaterialStateProperty.resolveWith<Color>(
-    //             (Set<MaterialState> states) {
-    //               if (states.contains(MaterialState.pressed)) {
-    //                 return Colors
-    //                     .white12; // Cambia el color de la animación cuando se presiona el botón
-    //               }
-    //               return Colors
-    //                   .transparent; // Color transparente por defecto para la animación
-    //             },
-    //           ),
-    //         ),
-    //         child: Text(
-    //           widget.title,
-    //           style: const TextStyle(
-    //             color: Colors.black,
-    //             fontSize: 16,
-    //             fontWeight: FontWeight.w500,
-    //           ),
-    //         ),
-    //       )
-    //     : ElevatedButton(
-    //         onPressed: () {},
-    //         style: ButtonStyle(
-    //           elevation: const MaterialStatePropertyAll<double>(0.00),
-    //           backgroundColor: const MaterialStatePropertyAll<Color>(
-    //             Color(0xFFFEC700),
-    //           ),
-    //           padding: const MaterialStatePropertyAll<EdgeInsets>(
-    //             EdgeInsets.only(
-    //               top: 13,
-    //               bottom: 13,
-    //               left: 50,
-    //               right: 50,
-    //             ),
-    //           ),
-    //           foregroundColor: const MaterialStatePropertyAll<Color>(
-    //             Colors.white,
-    //           ),
-    //           shape: MaterialStatePropertyAll<OutlinedBorder>(
-    //             RoundedRectangleBorder(
-    //               borderRadius: BorderRadius.circular(8),
-    //             ),
-    //           ),
-    //           overlayColor: MaterialStateProperty.resolveWith<Color>(
-    //             (Set<MaterialState> states) {
-    //               if (states.contains(MaterialState.pressed)) {
-    //                 return Colors
-    //                     .white12; // Cambia el color de la animación cuando se presiona el botón
-    //               }
-    //               return Colors
-    //                   .transparent; // Color transparente por defecto para la animación
-    //             },
-    //           ),
-    //         ),
-    //         child: Text(
-    //           widget.title,
-    //           style: const TextStyle(
-    //             color: Colors.black,
-    //             fontSize: 16,
-    //             fontWeight: FontWeight.bold,
-    //           ),
-    //         ),
-    //       );
   }
 }
